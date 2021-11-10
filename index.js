@@ -1,6 +1,9 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  fetch('https://anapioficeandfire.com/api/books')
+  .then(res => {
+    return res.json()
+  })
+  .then(data => console.log(data))
 }
 
 function renderBooks(books) {
@@ -15,3 +18,20 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+
+// fetch('https://reqres.in/api/users', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     firstName: 'Tom',
+//     lastName: 'Weather',
+//     id: 303
+//   })
+// })
+//   .then(res => {
+//     return res.json()
+//   })
+//   .then(data => console.log(data))
+//   .catch(error => console.log('Error'))
